@@ -8,10 +8,11 @@ allow-lan: true
 bind-address: "*"
 tun:
   enable: true
-  stack: system
+  stack: gvisor
   dns-hijack:
-  - tcp://8.8.8.8:53
-  - tcp://8.8.4.4:53
+  - 198.18.0.2:53
+  macOS-auto-route: true
+  macOS-auto-detect-interface: true
 dns:
   enable: true
   ipv6: false
