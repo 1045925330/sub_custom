@@ -3,12 +3,9 @@ port: 7890
 socks-port: 7891
 ipv6: false
 mode: rule
-log-level: warning
-external-controller: 0.0.0.0:9090
-secret: "123456"
+log-level: info
 allow-lan: true
 bind-address: "*"
-external-ui: "/usr/share/openclash/dashboard"
 tun:
   enable: true
   stack: system
