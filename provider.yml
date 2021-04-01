@@ -90,10 +90,30 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
 proxy-groups:
+  - name: 🖲️ 节点选择
+    type: select
+    proxies:
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇷🇺 俄罗斯节点
+      - 🇰🇷 韩国节点
+      - 🇩🇪 德国节点
+      - 🇫🇷 法国节点
   - name: 🎮游戏节点
     type: select
     use:
       - Game
+    proxies:
+      - DIRECT
+  - name: B站港澳台
+    type: select
+    proxies:
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
   - name: 🇭🇰 香港节点
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -157,18 +177,6 @@ proxy-groups:
     tolerance: 100
     use:
       - FR
-  - name: 🖲️ 节点选择
-    type: select
-    proxies:
-      - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇷🇺 俄罗斯节点
-      - 🇰🇷 韩国节点
-      - 🇩🇪 德国节点
-      - 🇫🇷 法国节点
   - name: Ⓜ️ OneDrive
     type: select
     proxies:
@@ -186,56 +194,86 @@ rule-providers:
     behavior: classical
     path: ./RuleSet/UnBan.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml
+    interval: 86400
   ChinaCompanyIp:
     type: http
     behavior: ipcidr
     path: ./RuleSet/ChinaCompanyIp.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml
+    interval: 86400
   ChinaDomain:
     type: http
     behavior: classical
     path: ./RuleSet/ChinaDomain.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
+    interval: 86400
   Download:
     type: http
     behavior: classical
     path: ./RuleSet/Download.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Download.yaml
+    interval: 86400
   GoogleFCM:
     type: http
     behavior: classical
     path: ./RuleSet/GoogleFCM.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml
+    interval: 86400
   GoogleCN:
     type: http
     behavior: classical
     path: ./RuleSet/GoogleCN.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml
+    interval: 86400
   ChinaMedia:
     type: http
     behavior: classical
     path: ./RuleSet/ChinaMedia.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaMedia.yaml
+    interval: 86400
   OneDrive:
     type: http
     behavior: classical
     path: ./RuleSet/OneDrive.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml
+    interval: 86400
   ProxyMedia:
     type: http
     behavior: classical
     path: ./RuleSet/ProxyMedia.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
+    interval: 86400
   ProxyGFWlist:
     type: http
     behavior: classical
     path: ./RuleSet/ProxyGFWlist.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
-
+    interval: 86400
+  ChinaIp:
+    type: http
+    behavior: ipcidr
+    path: ./RuleSet/ChinaIp.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIp.yaml
+    interval: 86400
+  BilibiliHMT:
+    type: http
+    behavior: classical
+    path: ./RuleSet/BilibiliHMT.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    path: ./RuleSet/SteamCN.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml
+    interval: 86400
 rules:
+  - RULE-SET,BilibiliHMT,B站港澳台
+  - RULE-SET,SteamCN,DIRECT
   - RULE-SET,LocalAreaNetwork,DIRECT
   - RULE-SET,UnBan,DIRECT
   - RULE-SET,ChinaCompanyIp,DIRECT
+  - RULE-SET,ChinaIp,DIRECT
   - RULE-SET,ChinaDomain,DIRECT
   - RULE-SET,Download,DIRECT
   - RULE-SET,GoogleFCM,DIRECT
