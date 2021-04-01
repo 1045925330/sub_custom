@@ -204,6 +204,7 @@ proxy-groups:
     use:
       - Game
     proxies:
+      - 🖲️ 节点选择
       - DIRECT
   - name: B站港澳台
     type: select
