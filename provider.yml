@@ -199,7 +199,7 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇩🇪 德国节点
       - 🇫🇷 法国节点
-  - name: 🎮游戏节点
+  - name: 🎮 游戏节点
     type: select
     use:
       - Game
@@ -380,5 +380,18 @@ rules:
   - RULE-SET,OneDrive,Ⓜ️ OneDrive
   - RULE-SET,ProxyMedia,🖲️ 节点选择
   - RULE-SET,ProxyGFWlist,🖲️ 节点选择
+  - DOMAIN,consumer.lp1.npns.srv.nintendo.net,🖲️ 节点选择
+  - DOMAIN,ctest-dl-lp1.cdn.nintendo.net,🖲️ 节点选择
+  - DOMAIN,ctest-ul-lp1.cdn.nintendo.net,🖲️ 节点选择
+  - DOMAIN,bcat-data-lp1.cdn.nintendo.net,🖲️ 节点选择
+  - DOMAIN,bcat-list-lp1.cdn.nintendo.net,🖲️ 节点选择
+  - DOMAIN,bcat-topics-lp1.cdn.nintend.net,🖲️ 节点选择
+  - DOMAIN,broker.lp1.npns.srv.nintendo.net,🖲️ 节点选择
+  - DOMAIN-SUFFIX,scsi.srv.nintendo.net,🖲️ 节点选择
+  - DOMAIN-SUFFIX,shop.nintendo.net,🖲️ 节点选择
+  - DOMAIN-SUFFIX,eshop.nintendo.net,🖲️ 节点选择
+  - DOMAIN-SUFFIX,d4c.nintendo.net,🖲️ 节点选择
+  - DOMAIN-SUFFIX,nintendo.net,🎮 游戏节点
+  - DOMAIN-SUFFIX,nintendo.com,🎮 游戏节点
   - GEOIP,CN,DIRECT
   - MATCH,🖲️ 节点选择
