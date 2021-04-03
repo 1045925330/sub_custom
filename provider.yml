@@ -312,6 +312,7 @@ rules:
 #Nintendo End#
   - RULE-SET,BilibiliHMT,B站港澳台
   - RULE-SET,SteamCN,DIRECT
+  - RULE-SET,Google,🖲️ 节点选择
   - RULE-SET,LocalAreaNetwork,DIRECT
   - RULE-SET,UnBan,DIRECT
   - RULE-SET,ChinaCompanyIp,DIRECT
@@ -322,7 +323,6 @@ rules:
   - RULE-SET,GoogleCN,DIRECT
   - RULE-SET,ChinaMedia,DIRECT
   - RULE-SET,OneDrive,Ⓜ️ OneDrive
-  - RULE-SET,Google,🖲️ 节点选择
   - RULE-SET,ProxyMedia,🖲️ 节点选择
   - RULE-SET,ProxyGFWlist,🖲️ 节点选择
   - GEOIP,CN,DIRECT
