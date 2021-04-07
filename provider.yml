@@ -294,7 +294,14 @@ rule-providers:
     path: ./RuleSet/Google.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml
     interval: 86400
+  MHR:
+    type: http
+    behavior: ipcidr
+    path: ./RuleSet/MHR.yaml
+    url: https://raw.githubusercontent.com/1045925330/sub_custom/master/Ruleset/Monster_Hunter_Rise.yaml
+    interval: 86400
 rules:
+  - RULE-SET,MHR,🎮 游戏节点
 #Nintendo Start#
   - DOMAIN,consumer.lp1.npns.srv.nintendo.net,🖲️ 节点选择
   - DOMAIN,ctest-dl-lp1.cdn.nintendo.net,🖲️ 节点选择
