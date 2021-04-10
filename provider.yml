@@ -295,7 +295,7 @@ rule-providers:
     type: http
     behavior: ipcidr
     path: ./RuleSet/MHR.yaml
-    url: https://raw.githubusercontent.com/1045925330/sub_custom/master/Ruleset/Monster_Hunter_Rise.yaml
+    url: https://raw.githubusercontent.com/1045925330/sub_custom/master/Ruleset/Nintendo-Switch.yaml
     interval: 86400
 rules:
   - RULE-SET,MHR,🎮 游戏节点
