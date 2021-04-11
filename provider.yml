@@ -19,15 +19,6 @@ dns:
   - 114.114.114.114
   - tls://8.8.8.8:853
 proxy-providers:
-  Game:
-    type: http
-    path: ./proxy/game.yaml
-    url: https://sub.id9.cc/sub?target=clash&url=https%3a%2f%2fxbrss.xyz%2frss%2fcv1%2fZLWWxc7%2fF3cKMT&include=(%e6%b8%b8%e6%88%8f)&list=true
-    interval: 28800
-    health-check:
-      enable: false
-      url: http://www.gstatic.com/generate_204
-      interval: 300
   HK:
     type: http
     path: ./proxy/hk.yaml
@@ -122,10 +113,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇩🇪 德国节点
       - 🇫🇷 法国节点
-  - name: 🎮 游戏节点
-    type: select
-    use:
-      - Game
   - name: B站港澳台
     type: select
     proxies:
@@ -291,29 +278,7 @@ rule-providers:
     path: ./RuleSet/Google.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml
     interval: 86400
-  MHR:
-    type: http
-    behavior: ipcidr
-    path: ./RuleSet/MHR.yaml
-    url: https://raw.githubusercontent.com/1045925330/sub_custom/master/Ruleset/Nintendo-Switch.yaml
-    interval: 86400
 rules:
-  - RULE-SET,MHR,🎮 游戏节点
-#Nintendo Start#
-  - DOMAIN,consumer.lp1.npns.srv.nintendo.net,🖲️ 节点选择
-  - DOMAIN,ctest-dl-lp1.cdn.nintendo.net,🖲️ 节点选择
-  - DOMAIN,ctest-ul-lp1.cdn.nintendo.net,🖲️ 节点选择
-  - DOMAIN,bcat-data-lp1.cdn.nintendo.net,🖲️ 节点选择
-  - DOMAIN,bcat-list-lp1.cdn.nintendo.net,🖲️ 节点选择
-  - DOMAIN,bcat-topics-lp1.cdn.nintend.net,🖲️ 节点选择
-  - DOMAIN,broker.lp1.npns.srv.nintendo.net,🖲️ 节点选择
-  - DOMAIN-SUFFIX,scsi.srv.nintendo.net,🖲️ 节点选择
-  - DOMAIN-SUFFIX,shop.nintendo.net,🖲️ 节点选择
-  - DOMAIN-SUFFIX,eshop.nintendo.net,🖲️ 节点选择
-  - DOMAIN-SUFFIX,d4c.nintendo.net,🖲️ 节点选择
-  - DOMAIN-SUFFIX,nintendo.net,🎮 游戏节点
-  - DOMAIN-SUFFIX,nintendo.com,🎮 游戏节点
-#Nintendo End#
   - RULE-SET,BilibiliHMT,B站港澳台
   - RULE-SET,SteamCN,DIRECT
   - RULE-SET,Google,🖲️ 节点选择
